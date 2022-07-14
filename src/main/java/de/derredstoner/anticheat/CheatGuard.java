@@ -41,7 +41,7 @@ public class CheatGuard extends JavaPlugin {
 
         this.serverWatcher = new ServerWatcher();
 
-        this.pledge = Pledge.build().range(Short.MIN_VALUE, (short) 0);
+        this.pledge = Pledge.build().range(Short.MIN_VALUE, (short) -1);
         this.pledge.start(this);
 
         Bukkit.getPluginManager().registerEvents(new BukkitListener(), this);
