@@ -68,16 +68,15 @@ public class Check {
                         message = CheatGuard.getInstance().config.getConfig().getString("messages.alerts");
                     }
 
-                    String bar = "";
+                    String bar = "IIIIIIIIIIIIIIIIIIII";
                     int barsToAdd = (int) (Math.min(1, violations / (double) banVL) * 20.0);
                     for(int i = 0; i < barsToAdd; i++) {
-                        bar = bar+"§c|";
+                        bar = bar.replaceFirst("I","§c|");
                     }
                     if(violations != banVL) {
-                        for(int i = 0; i < 20 - barsToAdd; i++) {
-                            bar = bar+"§7|";
-                        }
+                        bar = bar.replaceAll("I","§7|");
                     }
+                    //only one "for" is need if with this code... 
 
                     message = message.replace("%player%", data.player.getName())
                             .replace("%vl%", ""+violations)
